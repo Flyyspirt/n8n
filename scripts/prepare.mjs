@@ -2,9 +2,10 @@
 
 import { execFileSync, execSync } from 'node:child_process';
 import { resolve } from 'node:path';
+import { existsSync } from 'node:fs';
 
 // Skip lefthook install in CI or Docker build
-if (process.env.CI || process.env.DOCKER_BUILD) {
+if (process.env.CI || process.env.DOCKER_BUILD || !existsSync(resolve(import.meta.dirname, '..', '.git'))) {
 	process.exit(0);
 }
 
