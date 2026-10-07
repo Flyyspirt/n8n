@@ -1,0 +1,15 @@
+{
+  "services": [
+    {
+      "name": "n8n",
+      "type": "docker",
+      "dockerfilePath": "./Dockerfile.railway",
+      "env": {
+        "HOST": "0.0.0.0",
+        "PORT": "5678",
+        "N8N_BASIC_AUTH_ACTIVE": "false"
+      },
+      "port": 5678
+    }
+  ]
+}
